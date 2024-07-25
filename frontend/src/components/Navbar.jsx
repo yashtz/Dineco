@@ -114,17 +114,29 @@ const Navbar = () => {
 
       {/* Mobile Bottom Bar */}
       <div className="md:hidden fixed inset-x-0 bottom-0 bg-green-900 p-4 flex justify-around items-center shadow-md">
-        <Link to="/" className={isActive('/') ? 'text-white text-2xl' : 'text-gray-300 text-2xl'}>
-          <FiHome />
+        <Link
+          to="/"
+          className={`flex items-center justify-center p-2 rounded-full ${isActive('/') ? 'bg-white' : 'bg-transparent'} ${isActive('/') ? 'text-green-900' : 'text-white'}`}
+        >
+          <FiHome className="text-2xl" />
         </Link>
-        <Link to="/search" className={isActive('/search') ? 'text-white text-2xl' : 'text-gray-300 text-2xl'}>
-          <FiSearch />
+        <Link
+          to="/search"
+          className={`flex items-center justify-center p-2 rounded-full ${isActive('/search') ? 'bg-white' : 'bg-transparent'} ${isActive('/search') ? 'text-green-900' : 'text-white'}`}
+        >
+          <FiSearch className="text-2xl" />
         </Link>
-        <Link to="/myaccount" className={isActive('/myaccount') ? 'text-white text-2xl' : 'text-gray-300 text-2xl'}>
-          <FiUser />
+        <Link
+          to="/myaccount"
+          className={`flex items-center justify-center p-2 rounded-full ${isActive('/myaccount') ? 'bg-white' : 'bg-transparent'} ${isActive('/myaccount') ? 'text-green-900' : 'text-white'}`}
+        >
+          <FiUser className="text-2xl" />
         </Link>
-        <Link to="/cart" className={isActive('/cart') ? 'text-white text-2xl' : 'text-gray-300 text-2xl'}>
-          <FiShoppingCart />
+        <Link
+          to="/cart"
+          className={`flex items-center justify-center p-2 rounded-full ${isActive('/cart') ? 'bg-white' : 'bg-transparent'} ${isActive('/cart') ? 'text-green-900' : 'text-white'}`}
+        >
+          <FiShoppingCart className="text-2xl" />
         </Link>
       </div>
 
