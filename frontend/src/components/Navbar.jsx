@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FiSearch, FiHelpCircle, FiUser, FiShoppingCart, FiHome, FiMapPin, FiX } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
@@ -13,6 +13,24 @@ const Navbar = () => {
   const handleClearInput = () => {
     setLocationInput('');
   };
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Escape') {
+      setIsLocationMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isLocationMenuOpen) {
+      window.addEventListener('keydown', handleKeyDown);
+    } else {
+      window.removeEventListener('keydown', handleKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isLocationMenuOpen]);
 
   const pages = [
     { name: 'Search', icon: <FiSearch className="text-green-700 text-3xl" />, path: '/search' },
@@ -31,13 +49,18 @@ const Navbar = () => {
             <FiMapPin />
           </button>
         </div>
-        <div className="hidden md:flex items-center space-x-8 pr-4">
-          {pages.map((page, index) => (
-            <Link key={index} to={page.path} className="text-green-700 text-3xl">
-              {page.icon}
+          <div className="hidden md:flex items-center space-x-8 pr-4">
+            {pages.map((page, index) => (
+              <Link
+                key={index}
+                to={page.path}
+                className="text-green-700 text-3xl transform transition-transform duration-100 hover:scale-125"
+              >
+            {page.icon}
             </Link>
-          ))}
-        </div>
+            ))}
+          </div>
+
       </nav>
 
       {/* Desktop Location Menu */}
