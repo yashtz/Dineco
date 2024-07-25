@@ -1,1 +1,1 @@
-# surplus-dine
+# Dineco
