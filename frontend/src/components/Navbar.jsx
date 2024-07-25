@@ -44,23 +44,24 @@ const Navbar = () => {
       {/* Desktop Navbar */}
       <nav className="bg-white p-4 flex justify-between items-center">
         <div className="flex items-center">
-          <img src={require('../assets/logo-no-background.png')} alt="Dineco" className="w-32 h-8" />
+          <Link to="/" className="flex items-center">
+            <img src={require('../assets/logo-no-background.png')} alt="Dineco" className="w-32 h-8" />
+          </Link>
           <button onClick={toggleLocationMenu} className="hidden md:block text-green-700 text-3xl ml-4">
             <FiMapPin />
           </button>
         </div>
-          <div className="hidden md:flex items-center space-x-8 pr-4">
-            {pages.map((page, index) => (
-              <Link
-                key={index}
-                to={page.path}
-                className="text-green-700 text-3xl transform transition-transform duration-100 hover:scale-125"
-              >
-            {page.icon}
+        <div className="hidden md:flex items-center space-x-8 pr-4">
+          {pages.map((page, index) => (
+            <Link
+              key={index}
+              to={page.path}
+              className="text-green-700 text-3xl transform transition-transform duration-100 hover:scale-125"
+            >
+              {page.icon}
             </Link>
-            ))}
-          </div>
-
+          ))}
+        </div>
       </nav>
 
       {/* Desktop Location Menu */}
@@ -92,9 +93,9 @@ const Navbar = () => {
 
       {/* Mobile Top Bar */}
       <div className="md:hidden fixed inset-x-0 top-0 p-4 flex justify-between items-center bg-white">
-        <div className="flex items-center justify-center flex-grow md:flex-grow-0">
+        <Link to="/" className="flex items-center justify-center flex-grow md:flex-grow-0">
           <img src={require('../assets/logo-no-background.png')} alt="Dineco" className="w-32 h-8 mx-auto" />
-        </div>
+        </Link>
         <button onClick={toggleLocationMenu} className="text-green-700 text-3xl">
           <FiMapPin />
         </button>
