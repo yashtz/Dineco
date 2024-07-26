@@ -4,6 +4,8 @@ import { FiChevronDown } from 'react-icons/fi';
 const Home = () => {
   const [sortBy, setSortBy] = useState('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isVegSelected, setIsVegSelected] = useState(false);
+  const [isNonVegSelected, setIsNonVegSelected] = useState(false);
 
   const sortOptions = [
     'Price: Low to High',
@@ -21,10 +23,20 @@ const Home = () => {
     setIsDropdownOpen(false);
   };
 
+  const toggleVegSelection = () => {
+    setIsVegSelected(!isVegSelected);
+    setIsNonVegSelected(false);
+  };
+
+  const toggleNonVegSelection = () => {
+    setIsNonVegSelected(!isNonVegSelected);
+    setIsVegSelected(false);
+  };
+
   return (
-    <div className="p-6">
-      <h1 className="text-2xl mt-4 font-bold text-green-700 mb-4">
-        Discover Restaurants Using Dineco in <span className="italic">*user's city*</span>
+    <div className="container mx-auto px-4 md:px-6 py-6">
+      <h1 className="text-2xl md:text-3xl font-bold mb-4">
+        Discover Restaurants Using <span className="text-green-700">Dineco</span> in <span className="text-green-700 italic">Aurangabad</span>
       </h1>
       <div className="flex space-x-4 mb-4">
         <div className="relative">
@@ -52,10 +64,16 @@ const Home = () => {
             </div>
           )}
         </div>
-        <button className="bg-gray-200 px-4 py-2 rounded-full text-green-700">
+        <button 
+          onClick={toggleVegSelection}
+          className={`px-4 py-2 rounded-full ${isVegSelected ? 'bg-green-500 text-white' : 'bg-gray-200 text-green-500'}`}
+        >
           Veg
         </button>
-        <button className="bg-gray-200 px-4 py-2 rounded-full text-red-700">
+        <button 
+          onClick={toggleNonVegSelection}
+          className={`px-4 py-2 rounded-full ${isNonVegSelected ? 'bg-red-600 text-white' : 'bg-gray-200 text-red-700'}`}
+        >
           Non-Veg
         </button>
       </div>
