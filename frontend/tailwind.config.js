@@ -2,8 +2,12 @@
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}", "./public/index.html"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        abril: ['Abril Fatface', 'serif'],
+        lato: ['Lato', 'sans-serif']
+      },
+    },
   },
   plugins: [],
 }
-
