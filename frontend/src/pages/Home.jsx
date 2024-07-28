@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { FiChevronDown } from 'react-icons/fi';
 
 const Home = () => {
-  const [sortBy, setSortBy] = useState('');
+  const [sortBy, setSortBy] = useState('Relevance (Default)');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isVegSelected, setIsVegSelected] = useState(false);
   const [isNonVegSelected, setIsNonVegSelected] = useState(false);
 
   const sortOptions = [
+    'Relevance (Default)',
     'Price: Low to High',
     'Price: High to Low',
     'Delivery Time',
@@ -34,21 +35,22 @@ const Home = () => {
   };
 
   return (
+    <div className="min-h-screen bg-gray-100 flex flex-col">
     <div className="container mx-auto px-4 md:px-6 py-6">
-      <h1 className="text-2xl md:text-3xl font-bold mb-4">
-        Discover Restaurants Using <span className="text-green-700">Dineco</span> in <span className="text-green-700 italic">Aurangabad</span>
+      <h1 className="text-2xl md:text-3xl font-lato font-extrabold mb-4">
+        Discover Restaurants Using <span className="text-green-800 font-abril">Dineco</span> in <span className="text-green-800 font-abril">Pune</span>
       </h1>
       <div className="flex space-x-4 mb-4">
         <div className="relative">
           <button 
             onClick={toggleDropdown} 
-            className="bg-gray-200 px-4 py-2 rounded-full flex items-center space-x-2"
+            className="font-lato bg-gray-200 px-4 py-2 rounded-full flex items-center space-x-2"
           >
             <span>Sort By</span>
             <FiChevronDown />
           </button>
           {isDropdownOpen && (
-            <div className="absolute top-full mt-2 w-48 bg-white shadow-lg rounded-lg">
+            <div className="font-lato absolute top-full mt-2 w-48 bg-white shadow-lg rounded-lg">
               {sortOptions.map((option, index) => (
                 <div 
                   key={index} 
@@ -66,17 +68,18 @@ const Home = () => {
         </div>
         <button 
           onClick={toggleVegSelection}
-          className={`px-4 py-2 rounded-full ${isVegSelected ? 'bg-green-500 text-white' : 'bg-gray-200 text-green-500'}`}
+          className={`px-4 py-2 rounded-full ${isVegSelected ? 'font-lato bg-green-500 text-white' : 'font-lato bg-gray-200 text-green-500'}`}
         >
           Veg
         </button>
         <button 
           onClick={toggleNonVegSelection}
-          className={`px-4 py-2 rounded-full ${isNonVegSelected ? 'bg-red-600 text-white' : 'bg-gray-200 text-red-700'}`}
+          className={`px-4 py-2 rounded-full ${isNonVegSelected ? 'font-lato bg-red-600 text-white' : 'font-lato bg-gray-200 text-red-700'}`}
         >
           Non-Veg
         </button>
       </div>
+    </div>
     </div>
   );
 };
