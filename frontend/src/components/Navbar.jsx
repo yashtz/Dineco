@@ -86,7 +86,7 @@ const Navbar = () => {
             value={locationInput}
             onChange={(e) => setLocationInput(e.target.value)}
             placeholder="Search your area"
-            className="font-lato border border-gray-300 p-2 mb-4 rounded w-full"
+            className="font-lato border border-gray-300 p-2 mb-4 rounded w-full focus:outline-none focus:ring-2 focus:ring-green-700"
           />
           {locationInput && (
             <button
@@ -154,7 +154,7 @@ const Navbar = () => {
             value={locationInput}
             onChange={(e) => setLocationInput(e.target.value)}
             placeholder="Search your area"
-            className="font-lato border border-gray-300 p-2 mb-4 rounded w-full"
+            className="font-lato border border-gray-300 p-2 mb-4 rounded w-full focus:outline-none focus:ring-2 focus:ring-green-700"
           />
           {locationInput && (
             <button
