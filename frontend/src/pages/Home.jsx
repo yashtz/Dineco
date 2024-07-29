@@ -35,8 +35,8 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col">
-    <div className="container mx-auto px-4 md:px-6 py-6">
+    <div className="min-h-screen flex flex-col">
+    <div className="container mt-5 mx-auto px-4 md:px-6 py-6">
       <h1 className="text-2xl md:text-3xl font-lato font-extrabold mb-4">
         Discover Restaurants Using <span className="text-green-800 font-abril">Dineco</span> in <span className="text-green-800 font-abril">Pune</span>
       </h1>
