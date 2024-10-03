@@ -1,5 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+@font-face {
+    font-family: 'LostaMasta';
+    src: url('./assets/fonts/LostaMasta-Medium.ttf') format('truetype'); /* Adjust the path if necessary */
+    font-weight: normal;
+    font-style: normal;
+}

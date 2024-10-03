@@ -5,9 +5,10 @@ module.exports = {
     extend: {
       fontFamily: {
         abril: ['Abril Fatface', 'serif'],
-        lato: ['Lato', 'sans-serif']
+        lato: ['Lato', 'sans-serif'],
+        losta: ['LostaMasta', 'sans-serif'],
       },
     },
   },
   plugins: [],
-}
+};
