@@ -1,1 +1,1 @@
-# Dineco
+# Dinvos, previously Dineco
